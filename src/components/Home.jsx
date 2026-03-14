@@ -1,0 +1,141 @@
+import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
+
+export default function Home() {
+  return (
+    <section id="home" style={{ 
+      position: 'relative', 
+      overflow: 'visible', 
+      padding: '10rem var(--spacing-x) 2rem var(--spacing-x)', 
+      zIndex: 1,
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        textAlign: 'left',
+        zIndex: 10,
+        width: '100%'
+      }}>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '1rem', color: 'var(--text-primary)' }}
+        >
+          Hi, I'm <span style={{ fontWeight: 600 }}>Himanshu Shekhar</span>
+        </motion.h2>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          style={{
+            fontSize: 'clamp(3rem, 7vw, 6rem)',
+            lineHeight: 1.1,
+            marginBottom: '1.5rem',
+            fontWeight: 500,
+            letterSpacing: '-1px'
+          }}
+        >
+          I turn complex logic <br /> into robust software
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem', lineHeight: 1.6 }}
+        >
+          I am a Full Stack Developer specializing in Java, DSA, and the MERN stack, focusing on building scalable web applications with clean architecture and optimized user experience.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Link to="about" smooth={true} offset={-70} duration={500}>
+            <button style={{
+              padding: '1rem 2.5rem',
+              borderRadius: '4px',
+              border: 'none',
+              background: 'var(--text-primary)',
+              color: 'var(--bg-color)',
+              fontSize: '1.1rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              transition: 'var(--transition)'
+            }}
+              onMouseOver={(e) => e.currentTarget.style.opacity = '0.8'}
+              onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+            >
+              About Me
+            </button>
+          </Link>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem' }}
+        >
+          <div style={{
+            width: '24px',
+            height: '40px',
+            border: '2px solid var(--text-secondary)',
+            borderRadius: '12px',
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '6px'
+          }}>
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              style={{
+                width: '4px',
+                height: '8px',
+                backgroundColor: 'var(--text-secondary)',
+                borderRadius: '2px'
+              }}
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Modern Minimalist Outline Circles */}
+      <div style={{
+        position: 'absolute',
+        top: '10%',
+        left: '30%',
+        width: '500px',
+        height: '500px',
+        border: '1px solid var(--text-muted)',
+        opacity: 0.2,
+        borderRadius: '50%',
+        zIndex: 5,
+        pointerEvents: 'none'
+      }} />
+      <div style={{
+        position: 'absolute',
+        top: '25%',
+        left: '45%',
+        width: '600px',
+        height: '600px',
+        border: '1px solid var(--text-muted)',
+        opacity: 0.15,
+        borderRadius: '50%',
+        zIndex: 5,
+        pointerEvents: 'none'
+      }} />
+    </section>
+  );
+}
