@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import { FiArrowUpRight, FiArrowRight, FiPenTool, FiGrid } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import Certificates from './Certificates';
+import CP from './CP';
+import Education from './Education';
+import Contact from './Contact';
 import { 
   SiHtml5, SiCss, SiSass, SiBootstrap, SiTailwindcss, SiJavascript, 
   SiTypescript, SiReact, SiNextdotjs, SiAstro, SiReactquery, 
@@ -153,81 +157,12 @@ export default function AboutPage() {
         `}} />
       </section>
 
-      {/* Inspirations - 2 Col Grid */}
-      <section style={{ padding: '8rem var(--spacing-x)' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 400, marginBottom: '4rem', letterSpacing: '-0.02em' }}>Heroes & Gurus</h2>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '2px',
-          backgroundColor: 'rgba(0,0,0,0.05)',
-          border: '1px solid rgba(0,0,0,0.05)'
-        }}>
-          {[
-            { name: 'Mentors', role: 'Career Guidance', link: 'View Channel' },
-            { name: 'Open Source', role: 'Contribution', link: 'Explore' },
-            { name: 'UI Patterns', role: 'Inspiration', link: 'Browse' },
-            { name: 'Clean Code', role: 'Principles', link: 'Read More' }
-          ].map((guru, idx) => (
-            <motion.div 
-              key={idx}
-              whileHover={{ backgroundColor: '#fff' }}
-              style={{
-                backgroundColor: 'var(--bg-color)',
-                padding: '3rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                transition: 'background-color 0.3s ease'
-              }}
-            >
-              <div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 500, margin: 0 }}>{guru.name}</h3>
-                <p style={{ color: 'var(--text-muted)', margin: '0.5rem 0 2rem 0' }}>{guru.role}</p>
-              </div>
-              <a href="#" style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.5rem', 
-                fontSize: '0.9rem', 
-                fontWeight: 600,
-                color: '#000',
-                textDecoration: 'underline'
-              }}>
-                {guru.link} <FiArrowRight />
-              </a>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <Certificates />
+      <CP />
+      <Education />
 
-      {/* Footer CTA */}
-      <section style={{ 
-        padding: '10rem var(--spacing-x) 5rem var(--spacing-x)', 
-        textAlign: 'center',
-        borderTop: '0.5px solid rgba(0,0,0,0.1)',
-        marginTop: '5rem'
-      }}>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Want to start a project?</p>
-        <motion.a 
-          href="mailto:hello@himanshushekhar.com"
-          whileHover={{ scale: 1.05 }}
-          style={{ 
-            fontSize: 'clamp(2rem, 8vw, 6rem)', 
-            fontWeight: 800, 
-            textDecoration: 'none', 
-            color: '#000',
-            letterSpacing: '-0.04em'
-          }}
-        >
-          Say Hi.
-        </motion.a>
-        <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center', gap: '3rem' }}>
-          {['LinkedIn', 'GitHub', 'Twitter'].map(social => (
-            <a key={social} href="#" style={{ fontWeight: 600, color: 'var(--text-muted)' }}>{social}</a>
-          ))}
-        </div>
-      </section>
+      <Contact paddingBottom="4rem" />
+
     </div>
   );
 }

@@ -1,114 +1,123 @@
 import { motion } from 'framer-motion';
-import { FiCode, FiTerminal } from 'react-icons/fi';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { useState } from 'react';
 
-const cpData = [
+const achievementsData = [
   {
-    platform: "LeetCode",
-    stats: "500+ Problems Solved",
-    rating: "Top 5%",
-    link: "#",
-    icon: <FiCode />
+    title: "LeetCode",
+    subtitle: "500+ Problems Solved • Top 5%",
+    link: "#"
   },
   {
-    platform: "Codeforces",
-    stats: "Specialist",
-    rating: "Max Rating: 1450",
-    link: "#",
-    icon: <FiTerminal />
-  }
-];
-
-const hackathons = [
+    title: "Codeforces",
+    subtitle: "Specialist • Max Rating: 1450",
+    link: "#"
+  },
   {
     title: "Global Hack Week",
-    position: "Winner - Best Web App",
-    description: "Built a full-stack platform for connecting local farmers directly with consumers, effectively cutting out the middleman."
+    subtitle: "Winner — Best Web App",
+    description: "Built a full-stack platform for connecting local farmers directly with consumers, effectively cutting out the middleman.",
+    link: "#"
   },
   {
     title: "Smart India Hackathon",
-    position: "Finalist",
-    description: "Developed an AI-driven dashboard that visualizes predictive data models for urban traffic management."
+    subtitle: "Finalist",
+    description: "Developed an AI-driven dashboard that visualizes predictive data models for urban traffic management.",
+    link: "#"
   }
 ];
 
+const ListItem = ({ title, subtitle, description, link }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '2.5rem 0',
+        borderBottom: '1px solid rgba(0,0,0,0.1)',
+        textDecoration: 'none',
+        color: 'var(--text-primary)',
+        position: 'relative'
+      }}
+      whileHover={{ x: 10 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div>
+        <h3 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.3rem)', fontWeight: 500, margin: 0, color: '#000' }}>{title}</h3>
+        <p style={{ color: 'var(--text-secondary)', margin: '0.4rem 0 0 0', fontSize: '1rem' }}>{subtitle}</p>
+        {description && <p style={{ color: 'var(--text-muted)', margin: '0.6rem 0 0 0', fontSize: '0.95rem', maxWidth: '600px', lineHeight: 1.5 }}>{description}</p>}
+      </div>
+
+      <motion.div
+        animate={{
+          scale: isHovered ? 1.1 : 1,
+          backgroundColor: isHovered ? '#000' : 'transparent',
+          color: isHovered ? '#fff' : '#000'
+        }}
+        transition={{ duration: 0.3 }}
+        style={{
+          width: '50px',
+          height: '50px',
+          borderRadius: '50%',
+          border: '1px solid #000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '1.2rem',
+          flexShrink: 0
+        }}
+      >
+        <FiArrowUpRight />
+      </motion.div>
+
+      <motion.div
+        animate={{ width: isHovered ? '100%' : '0%' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          height: '2px',
+          backgroundColor: '#000',
+          zIndex: 2
+        }}
+      />
+    </motion.a>
+  );
+};
+
 export default function CP() {
   return (
-    <section id="cp">
+    <section id="cp" style={{ padding: '4rem var(--spacing-x) 8rem var(--spacing-x)' }}>
       <div style={{ width: '100%' }}>
         <motion.h2
-          className="section-title text-gradient"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
+          style={{
+            fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
+            fontWeight: 400, 
+            marginBottom: '5rem', 
+            letterSpacing: '-0.04em',
+            color: 'var(--text-primary)'
+          }}
         >
-          Competitive Programming & Hackathons
+          Achievements
         </motion.h2>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-
-          {/* CP Stats */}
-          <div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem', textAlign: 'center' }}>Coding Profiles</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-              {cpData.map((profile, i) => (
-                <motion.a
-                  key={i}
-                  href={profile.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass-card"
-                  style={{ padding: '2rem', textAlign: 'center', textDecoration: 'none' }}
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <div style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '1rem' }}>
-                    {profile.icon}
-                  </div>
-                  <h4 style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{profile.platform}</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontWeight: 600 }}>{profile.stats}</p>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{profile.rating}</p>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          {/* Hackathons */}
-          <div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem', textAlign: 'center' }}>Hackathons & Competitions</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {hackathons.map((hack, i) => (
-                <motion.div
-                  key={i}
-                  className="glass-card"
-                  style={{ padding: '2rem', borderLeft: '4px solid var(--accent)' }}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-                    <h4 style={{ fontSize: '1.3rem', color: 'var(--text-primary)' }}>{hack.title}</h4>
-                    <span style={{
-                      background: 'rgba(236, 72, 153, 0.1)',
-                      color: 'var(--accent)',
-                      padding: '0.4rem 1rem',
-                      borderRadius: '20px',
-                      fontSize: '0.9rem',
-                      fontWeight: 600
-                    }}>
-                      {hack.position}
-                    </span>
-                  </div>
-                  <p style={{ color: 'var(--text-secondary)' }}>{hack.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {achievementsData.map((item, index) => (
+            <ListItem key={index} {...item} />
+          ))}
         </div>
       </div>
     </section>
