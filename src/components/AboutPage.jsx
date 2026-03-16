@@ -10,7 +10,7 @@ import {
   SiTypescript, SiReact, SiNextdotjs, SiAstro, SiReactquery, 
   SiSwr, SiStyledcomponents, SiGit, SiGreensock, SiFigma, SiFramer,
   SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiPython, 
-  SiCplusplus, SiPostman, SiGithub, SiC
+  SiCplusplus, SiPostman, SiGithub, SiC, SiVercel, SiRender, SiCanva
 } from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 
@@ -37,7 +37,10 @@ export default function AboutPage() {
     { name: 'Git / GitHub', icon: <div style={{ display: 'flex', gap: '4px' }}><SiGit /><SiGithub /></div> },
     { name: 'Postman', icon: <SiPostman /> },
     { name: 'Figma', icon: <SiFigma /> },
-    { name: 'C', icon: <SiC /> }
+    { name: 'C', icon: <SiC /> },
+    { name: 'Vercel', icon: <SiVercel /> },
+    { name: 'Render', icon: <SiRender /> },
+    { name: 'Canva', icon: <SiCanva /> }
   ];
 
 
@@ -46,7 +49,7 @@ export default function AboutPage() {
       backgroundColor: 'var(--bg-color)',
       color: 'var(--text-primary)',
       minHeight: '100vh',
-      padding: '0 0 10rem 0',
+      padding: '0 0 0 0',
       fontFamily: "'Inter', sans-serif"
     }}>
       {/* Intro Hero with Watermark */}

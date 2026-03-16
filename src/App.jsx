@@ -37,7 +37,7 @@ function App() {
             <Home />
             <Projects />
             <MoreProjects />
-            <Contact />
+            <Contact paddingBottom="4rem" />
           </main>
         } />
         <Route path="/about" element={<AboutPage />} />
