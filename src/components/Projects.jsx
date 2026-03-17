@@ -149,7 +149,7 @@ export default function Projects() {
                 <h3
                   data-aos="fade-up"
                   style={{
-                    fontSize: 'clamp(3rem, 6vw, 6rem)',
+                    fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                     fontWeight: 500,
                     margin: 0,
                     maxWidth: '12ch',
