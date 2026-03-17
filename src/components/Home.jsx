@@ -27,69 +27,93 @@ export default function Home() {
         zIndex: 10,
         width: '100%'
       }}>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '1rem', color: 'var(--text-primary)' }}
-        >
-          Hi, I'm <span style={{ fontWeight: 600 }}>Himanshu Shekhar</span>
-        </motion.h2>
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h2
+            initial={{ y: '120%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1] }}
+            style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.8rem', color: 'var(--text-primary)' }}
+          >
+            Hi, I'm <span style={{ fontWeight: 600 }}>Himanshu Shekhar</span>
+          </motion.h2>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            lineHeight: 1.2,
-            marginBottom: '1.5rem',
-            fontWeight: 500,
-            letterSpacing: '-2px'
-          }}
-        >
-          I turn user interactions <br /> into meaningful experiences
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem', lineHeight: 1.6 }}
-        >
-          I am a Full Stack Developer specializing in Java, DSA, and the MERN stack, focusing on building scalable web applications with clean architecture and optimized user experience.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Link to="/about">
-            <button style={{
-              padding: '1rem 2.5rem',
-              borderRadius: '4px',
-              border: 'none',
-              background: 'var(--text-primary)',
-              color: 'var(--bg-color)',
-              fontSize: '1.1rem',
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h1
+            initial={{ y: '120%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1], delay: 0.2 }}
+            style={{
+              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+              lineHeight: 1.2,
+              marginBottom: '0.2rem',
               fontWeight: 500,
-              cursor: 'pointer',
-              transition: 'var(--transition)'
+              letterSpacing: '-2px'
             }}
-              onMouseOver={(e) => e.currentTarget.style.opacity = '0.8'}
-              onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
-            >
-              About Me
-            </button>
-          </Link>
-        </motion.div>
+          >
+            I turn user interactions
+          </motion.h1>
+        </div>
+        <div style={{ overflow: 'hidden' }}>
+          <motion.h1
+            initial={{ y: '120%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1], delay: 0.4 }}
+            style={{
+              fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+              lineHeight: 1.2,
+              marginBottom: '1.5rem',
+              fontWeight: 500,
+              letterSpacing: '-2px'
+            }}
+          >
+            into meaningful experiences
+          </motion.h1>
+        </div>
+
+        <div style={{ overflow: 'hidden' }}>
+          <motion.p
+            initial={{ y: '120%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1], delay: 0.6 }}
+            style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '600px', marginBottom: '3rem', lineHeight: 1.6 }}
+          >
+            I am a Full Stack Developer specializing in Java, DSA, and the MERN stack, focusing on building scalable web applications with clean architecture and optimized user experience.
+          </motion.p>
+        </div>
+
+        <div style={{ overflow: 'hidden' }}>
+          <motion.div
+            initial={{ y: '120%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1], delay: 2.7 }}
+          >
+            <Link to="/about">
+              <button style={{
+                padding: '1rem 2.5rem',
+                borderRadius: '4px',
+                border: 'none',
+                background: 'var(--text-primary)',
+                color: 'var(--bg-color)',
+                fontSize: '1.1rem',
+                fontWeight: 500,
+                cursor: 'pointer',
+                transition: 'var(--transition)'
+              }}
+                onMouseOver={(e) => e.currentTarget.style.opacity = '0.8'}
+                onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                About Me
+              </button>
+            </Link>
+          </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 2.7 }}
           style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem' }}
         >
           <Link to="/#projects" style={{ cursor: 'pointer', display: 'block' }}>

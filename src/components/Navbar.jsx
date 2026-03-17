@@ -16,8 +16,8 @@ const menuItems = navLinks.map(link => ({
 }));
 
 const socialItems = [
-  { label: 'GitHub', link: 'https://github.com/skrshekharmdr' },
-  { label: 'LinkedIn', link: 'https://linkedin.com/' }
+  { label: 'GitHub', link: 'https://github.com/himanshu952354' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/himanshu9523' }
 ];
 
 export default function Navbar({ setIsHoveringRing }) {

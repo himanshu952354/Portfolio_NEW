@@ -2,6 +2,21 @@ import { motion } from 'framer-motion';
 import { FiAward, FiArrowUpRight } from 'react-icons/fi';
 import { useState } from 'react';
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const staggerItem = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+};
+
 const certificates = [
   {
     title: "The Bits and Bytes of Computer Networking",
@@ -132,40 +147,37 @@ export default function Certificates() {
   return (
     <section id="certificates" style={{ padding: '4rem var(--spacing-x) 8rem var(--spacing-x)' }}>
       <div style={{ width: '100%' }}>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <h2 style={{
+          fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
+          fontWeight: 400, 
+          marginBottom: '5rem', 
+          letterSpacing: '-0.04em',
+          color: 'var(--text-primary)'
+        }}>Certificates</h2>
+
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
-            fontWeight: 400, 
-            marginBottom: '5rem', 
-            letterSpacing: '-0.04em',
-            color: 'var(--text-primary)'
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            gap: '3rem',
+            maxWidth: '1200px'
           }}
         >
-          Certificates
-        </motion.h2>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-          gap: '3rem',
-          maxWidth: '1200px'
-        }}>
-          {certificates.map((cert, index) => (
+          {[...certificates]
+            .sort((a, b) => Number(b.date) - Number(a.date))
+            .map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              variants={staggerItem}
             >
               <FlipCard cert={cert} fillCard />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

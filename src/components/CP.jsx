@@ -98,9 +98,9 @@ export default function CP() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
-            fontWeight: 400, 
-            marginBottom: '5rem', 
+            fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+            fontWeight: 400,
+            marginBottom: '5rem',
             letterSpacing: '-0.04em',
             color: 'var(--text-primary)'
           }}

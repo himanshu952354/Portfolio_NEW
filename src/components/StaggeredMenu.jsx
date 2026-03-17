@@ -416,53 +416,62 @@ export const StaggeredMenu = ({
         <div className="sm-panel-inner">
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
             {items && items.length ? (
-              items.map((it, idx) => (
-                <li className="sm-panel-itemWrap" key={it.label + idx}>
-                  {/* Changed <a> to <Link> for smooth scrolling */}
-                  {isRouterLink ? (
-                    <RouterLink
-                      className="sm-panel-item"
-                      to={it.link}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}
-                      onClick={() => {
-                        closeMenu();
-                        if (it.link === '/' && location.pathname === '/') {
-                          setTimeout(() => {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }, 150);
-                        } else if (it.link.startsWith('/#') && location.pathname === '/') {
-                          const id = it.link.replace('/#', '');
-                          const element = document.getElementById(id);
-                          if (element) {
+              items.map((it, idx) => {
+                const isActive = it.link.includes('#')
+                  ? location.pathname === it.link.split('#')[0] && location.hash === '#' + it.link.split('#')[1]
+                  : it.link === '/' 
+                    ? location.pathname === '/' && !location.hash 
+                    : location.pathname === it.link;
+
+                return (
+                  <li className="sm-panel-itemWrap" key={it.label + idx}>
+                    {isRouterLink ? (
+                      <RouterLink
+                        className="sm-panel-item"
+                        to={it.link}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}
+                        style={isActive ? { color: '#5227ff' } : undefined}
+                        onClick={() => {
+                          closeMenu();
+                          if (it.link === '/' && location.pathname === '/') {
                             setTimeout(() => {
-                              element.scrollIntoView({ behavior: 'smooth' });
-                            }, 50);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }, 150);
+                          } else if (it.link.startsWith('/#') && location.pathname === '/') {
+                            const id = it.link.replace('/#', '');
+                            const element = document.getElementById(id);
+                            if (element) {
+                              setTimeout(() => {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                              }, 50);
+                            }
                           }
-                        }
-                      }}
-                    >
-                      <span className="sm-panel-itemLabel">{it.label}</span>
-                    </RouterLink>
-                  ) : (
-                    <Link
-                      className="sm-panel-item"
-                      to={it.link}
-                      spy={true}
-                      smooth={true}
-                      offset={-70}
-                      duration={500}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}
-                      onClick={() => {
-                        closeMenu(); // Close immediately on click
-                      }}
-                    >
-                      <span className="sm-panel-itemLabel">{it.label}</span>
-                    </Link>
-                  )}
-                </li>
-              ))
+                        }}
+                      >
+                        <span className="sm-panel-itemLabel">{it.label}</span>
+                      </RouterLink>
+                    ) : (
+                      <Link
+                        className="sm-panel-item"
+                        to={it.link}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}
+                        style={isActive ? { color: '#5227ff' } : undefined}
+                        onClick={() => {
+                          closeMenu();
+                        }}
+                      >
+                        <span className="sm-panel-itemLabel">{it.label}</span>
+                      </Link>
+                    )}
+                  </li>
+                );
+              })
             ) : (
               <li className="sm-panel-itemWrap" aria-hidden="true">
                 <span className="sm-panel-item">

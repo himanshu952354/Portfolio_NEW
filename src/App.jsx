@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -8,6 +10,7 @@ import MoreProjects from './components/MoreProjects';
 import AboutPage from './components/AboutPage';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
   const [isHoveringRing, setIsHoveringRing] = useState(false);
@@ -27,8 +30,17 @@ function App() {
     }
   }, [location]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
+
   return (
     <div className="app-container">
+      <SmoothScroll />
       <CustomCursor isHoveringRing={isHoveringRing} />
       <Navbar setIsHoveringRing={setIsHoveringRing} />
       <Routes>

@@ -1,6 +1,22 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+const formContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const formItem = {
+  hidden: { y: '100%', opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+};
+
 export default function Contact({ paddingBottom = '10rem' }) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -39,97 +55,130 @@ export default function Contact({ paddingBottom = '10rem' }) {
         gap: '4rem',
         alignItems: 'flex-start'
       }}>
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 style={{
-            fontSize: 'clamp(2.5rem, 6vw, 5rem)',
-            fontWeight: 400,
-            margin: 0,
-            letterSpacing: '-2px',
-            color: 'var(--text-primary)',
-            lineHeight: 1
-          }}>
-            Get in touch
-          </h2>
-          <p style={{ 
-            color: 'var(--text-muted)', 
-            fontSize: '1.2rem', 
-            marginTop: '1.5rem', 
-            maxWidth: '450px', 
-            lineHeight: 1.6 
-          }}>
-            Have a project in mind or just want to say hi? Feel free to leave a message or email me directly at <a href="mailto:hello@himanshushekhar.com" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 500 }}>hello@himanshushekhar.com</a>
-          </p>
-        </motion.div>
+        <div>
+          <motion.div 
+            style={{ overflow: 'hidden' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h2
+              variants={{
+                hidden: { y: '120%', opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
+              style={{
+                fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                fontWeight: 400,
+                margin: 0,
+                letterSpacing: '-2px',
+                color: 'var(--text-primary)',
+                lineHeight: 1
+              }}
+            >
+              Get in touch
+            </motion.h2>
+          </motion.div>
+          <motion.div 
+            style={{ overflow: 'hidden', marginTop: '1.5rem' }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.p
+              variants={{
+                hidden: { y: '120%', opacity: 0 },
+                visible: { y: 0, opacity: 1 }
+              }}
+              transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1], delay: 0.2 }}
+              style={{ 
+                color: 'var(--text-muted)', 
+                fontSize: '1.2rem', 
+                maxWidth: '450px', 
+                lineHeight: 1.6,
+                marginTop: 0
+              }}
+            >
+              Have a project in mind or just want to say hi? Feel free to leave a message or email me directly at <a href="mailto:hello@himanshushekhar.com" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 500 }}>hello@himanshushekhar.com</a>
+            </motion.p>
+          </motion.div>
+        </div>
 
         <motion.form 
           onSubmit={handleSubmit}
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          variants={formContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
         >
-          <div>
-            <input
-              type="text"
-              placeholder="Name"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              style={inputStyle}
-              onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
-              onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
-            />
+          <div style={{ overflow: 'hidden' }}>
+            <motion.div variants={formItem}>
+              <input
+                type="text"
+                placeholder="Name"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
+              />
+            </motion.div>
           </div>
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              style={inputStyle}
-              onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
-              onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
-            />
+          <div style={{ overflow: 'hidden' }}>
+            <motion.div variants={formItem}>
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                style={inputStyle}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
+              />
+            </motion.div>
           </div>
-          <div>
-            <textarea
-              placeholder="Message"
-              required
-              rows={4}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              style={{ ...inputStyle, resize: 'none' }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
-              onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
-            />
+          <div style={{ overflow: 'hidden' }}>
+            <motion.div variants={formItem}>
+              <textarea
+                placeholder="Message"
+                required
+                rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{ ...inputStyle, resize: 'none' }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(0,0,0,0.15)'}
+              />
+            </motion.div>
           </div>
           
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02, backgroundColor: 'var(--primary)' }}
-            whileTap={{ scale: 0.98 }}
-            style={{
-              padding: '1.3rem',
-              backgroundColor: '#000',
-              color: '#fff',
-              border: 'none',
-              fontSize: '1.1rem',
-              fontWeight: 500,
-              borderRadius: '6px',
-              cursor: 'pointer',
-              marginTop: '1rem',
-              transition: 'background-color 0.3s ease'
-            }}
-          >
-            {isSubmitted ? 'Message Sent!' : 'Send Message'}
-          </motion.button>
+          <div style={{ overflow: 'hidden' }}>
+            <motion.button
+              type="submit"
+              variants={formItem}
+              whileHover={{ scale: 1.02, backgroundColor: 'var(--primary)' }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                padding: '1.3rem',
+                backgroundColor: '#000',
+                color: '#fff',
+                border: 'none',
+                fontSize: '1.1rem',
+                fontWeight: 500,
+                borderRadius: '6px',
+                cursor: 'pointer',
+                marginTop: '1rem',
+                width: '100%',
+                transition: 'background-color 0.3s ease'
+              }}
+            >
+              {isSubmitted ? 'Message Sent!' : 'Send Message'}
+            </motion.button>
+          </div>
         </motion.form>
       </div>
     </section>

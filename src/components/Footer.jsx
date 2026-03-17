@@ -13,7 +13,7 @@ export default function Footer() {
       gap: '1rem'
     }}>
       <p style={{ margin: 0 }}>I turn user interactions into meaningful experiences.</p>
-      <p style={{ margin: 0 }}>Designed and developed by me</p>
+      <p style={{ margin: 0 }}>Designed and Developed with ❤️</p>
     </footer>
   );
 }

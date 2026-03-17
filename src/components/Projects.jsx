@@ -44,7 +44,7 @@ const projectsData = [
   }
 ];
 
-const ExploreButton = ({ href }) => (
+const ExploreButton = ({ href, ...props }) => (
   <motion.a
     href={href}
     target="_blank"
@@ -65,6 +65,7 @@ const ExploreButton = ({ href }) => (
       fontWeight: '500',
       marginTop: '2rem'
     }}
+    {...props}
   >
     Explore
   </motion.a>
@@ -108,32 +109,25 @@ export default function Projects() {
       <div style={{
         padding: '4rem var(--spacing-x) 5rem var(--spacing-x)'
       }}>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="800"
           style={{
             fontSize: 'clamp(3rem, 7vw, 10rem)',
             lineHeight: 1,
             marginBottom: '6rem',
             fontWeight: 400,
             letterSpacing: '-2px',
-            color: 'var(--text-primary)',
-            opacity: 0.2
+            color: 'var(--text-primary)'
           }}
         >
           Projects
-        </motion.h2>
+        </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
           {projectsData.map((project, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 display: 'flex',
                 flexDirection: index % 2 === 0 ? 'row-reverse' : 'row',
@@ -152,34 +146,45 @@ export default function Projects() {
                 minWidth: '300px',
                 alignItems: 'flex-start'
               }}>
-                <motion.h3 style={{
-                  fontSize: 'clamp(3rem, 6vw, 6rem)',
-                  fontWeight: 500,
-                  margin: 0,
-                  maxWidth: '12ch',
-                  lineHeight: 1,
-                  letterSpacing: '-1px'
-                }}>
+                <h3
+                  data-aos="fade-up"
+                  style={{
+                    fontSize: 'clamp(3rem, 6vw, 6rem)',
+                    fontWeight: 500,
+                    margin: 0,
+                    maxWidth: '12ch',
+                    lineHeight: 1,
+                    letterSpacing: '-1px'
+                  }}
+                >
                   {project.title}
-                </motion.h3>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  fontSize: '1.1rem',
-                  marginTop: '1rem',
-                  maxWidth: '400px',
-                  lineHeight: 1.6,
-                  fontWeight: 400
-                }}>
+                </h3>
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  style={{
+                    color: 'var(--text-secondary)',
+                    fontSize: '1.1rem',
+                    marginTop: '1rem',
+                    maxWidth: '400px',
+                    lineHeight: 1.6,
+                    fontWeight: 400
+                  }}
+                >
                   {project.description}
                 </p>
-                <ExploreButton href={project.live} />
+                <ExploreButton href={project.live} data-aos="fade-up" data-aos-delay="2100" />
               </div>
 
               {/* Right Column: Landscape Image */}
-              <div style={{ flex: 1.2, minWidth: '300px', width: '100%' }}>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="100"
+                style={{ flex: 1.2, minWidth: '300px', width: '100%' }}
+              >
                 <LandscapeImage src={project.images[0]} alt={project.title} />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
