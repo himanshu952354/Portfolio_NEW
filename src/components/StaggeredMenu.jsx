@@ -432,6 +432,8 @@ export const StaggeredMenu = ({
                       <RouterLink
                         className="sm-panel-item"
                         to={it.link}
+                        target={it.target}
+                        rel={it.target === '_blank' ? 'noopener noreferrer' : undefined}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}
                         style={isActive ? { color: '#5227ff' } : undefined}
@@ -462,6 +464,7 @@ export const StaggeredMenu = ({
                         smooth={true}
                         offset={-70}
                         duration={500}
+                        target={it.target}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}
                         style={isActive ? { color: '#5227ff' } : undefined}

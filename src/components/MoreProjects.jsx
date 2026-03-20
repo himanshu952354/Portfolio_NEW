@@ -4,8 +4,8 @@ import { FiArrowUpRight } from 'react-icons/fi';
 
 const moreProjectsData = [
   {
-    title: "Social Media Dashboard",
-    link: "#",
+    title: "Playlist",
+    link: "https://himanshu952354.github.io/PortFolio/playlist.html",
   },
   {
     title: "Memory Game",

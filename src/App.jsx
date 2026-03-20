@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import MoreProjects from './components/MoreProjects';
 import AboutPage from './components/AboutPage';
+import Resume from './components/Resume';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import SmoothScroll from './components/SmoothScroll';
@@ -53,6 +54,7 @@ function App() {
           </main>
         } />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
     </div>

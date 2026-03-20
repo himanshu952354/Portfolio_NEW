@@ -100,7 +100,7 @@ export default function Contact({ paddingBottom = '10rem' }) {
                 marginTop: 0
               }}
             >
-              Have a project in mind or just want to say hi? Feel free to leave a message or email me directly at <a href="mailto:hello@himanshushekhar.com" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 500 }}>hello@himanshushekhar.com</a>
+              Have a project in mind or just want to say hi? Feel free to leave a message or email me directly at <a href="mailto:shekhar952354@gmail.com" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 500 }}>shekhar952354@gmail.com</a>
             </motion.p>
           </motion.div>
         </div>

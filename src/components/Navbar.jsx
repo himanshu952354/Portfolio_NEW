@@ -6,18 +6,21 @@ import StaggeredMenu from './StaggeredMenu';
 const navLinks = [
   { title: 'Home', path: '/' },
   { title: 'Projects', path: '/#projects' },
-  { title: 'About Me', path: '/about' }
+  { title: 'About Me', path: '/about' },
+  { title: 'Resume', path: '/resume' }
 ];
 
 const menuItems = navLinks.map(link => ({
   label: link.title,
   ariaLabel: `Go to ${link.title} page`,
-  link: link.path
+  link: link.path,
+  target: link.target
 }));
 
 const socialItems = [
   { label: 'GitHub', link: 'https://github.com/himanshu952354' },
-  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/himanshu9523' }
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/himanshu9523' },
+  { label: 'Email', link: 'mailto:shekhar952354@gmail.com' }
 ];
 
 export default function Navbar({ setIsHoveringRing }) {
