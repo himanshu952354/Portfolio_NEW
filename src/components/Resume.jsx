@@ -12,11 +12,6 @@ const Resume = () => {
     });
   }, []);
 
-  const handlePrint = () => {
-    window.print();
-  };
-
-  // Primary color from the image
   const primaryColor = '#283593';
 
   return (
@@ -78,6 +73,17 @@ const Resume = () => {
           justify-content: space-between;
           align-items: baseline;
         }
+        .skill-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 0.2rem;
+          font-size: 0.95rem;
+        }
+        .skill-label {
+          min-width: 140px;
+          color: ${primaryColor};
+          font-weight: bold;
+        }
         ul {
           padding-left: 1.2rem;
           margin: 0.2rem 0;
@@ -90,6 +96,7 @@ const Resume = () => {
         }
       `}</style>
 
+      {/* Page Header (Heading & Button) */}
       <div style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
@@ -148,15 +155,15 @@ const Resume = () => {
         data-aos-duration="1000"
         data-aos-delay="200"
       >
-        {/* Header Section */}
+        {/* Document Header Section */}
         <header>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: primaryColor, margin: '0 0 0.2rem 0' }}>Himanshu Shekhar</h1>
-          <div className="flex-between">
-            <div style={{ fontSize: '0.95rem' }}>
-              <p>LinkedIn: <a className="blue-link" href="https://linkedin.com/in/himanshu9523">linkedin.com/in/himanshu9523</a></p>
-              <p>GitHub: <a className="blue-link" href="https://github.com/himanshu952354">github.com/himanshu952354</a></p>
+          <div className="flex-between" style={{ fontSize: '0.92rem' }}>
+            <div style={{ flex: 1 }}>
+              <p>LinkedIn: <a className="blue-link" href="https://linkedin.com/in/himanshu9523" target="_blank" rel="noreferrer">linkedin.com/in/himanshu9523</a></p>
+              <p>GitHub: <a className="blue-link" href="https://github.com/himanshu952354" target="_blank" rel="noreferrer">github.com/himanshu952354</a></p>
             </div>
-            <div style={{ textAlign: 'right', fontSize: '0.95rem' }}>
+            <div style={{ textAlign: 'right', flex: 1 }}>
               <p>Email: <a className="blue-link" href="mailto:shekhar952354@gmail.com">shekhar952354@gmail.com</a></p>
               <p>Mobile: +91-7368989376</p>
             </div>
@@ -167,12 +174,24 @@ const Resume = () => {
         <section>
           <h2 className="section-title">SKILLS</h2>
           <div className="section-divider"></div>
-          <ul style={{ listStyleType: 'disc', fontSize: '0.95rem' }}>
-            <li><span className="bold-blue">Languages:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Java, JavaScript, C++, PHP, HTML</li>
-            <li><span className="bold-blue">Frameworks:</span> &nbsp;&nbsp;&nbsp; React, Tailwind CSS, NodeJS</li>
-            <li><span className="bold-blue">Tools/Platforms:</span> MySQL, MongoDB, Figma, Git, GitHub, Render, Vercel</li>
-            <li><span className="bold-blue">Soft Skills:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Problem-Solving, Team work, Adaptability, Critical Thinking</li>
-          </ul>
+          <div style={{ marginTop: '0.4rem' }}>
+            <div className="skill-item">
+              <span className="skill-label">Languages:</span>
+              <span>Java, JavaScript, C++, PHP, HTML</span>
+            </div>
+            <div className="skill-item">
+              <span className="skill-label">Frameworks:</span>
+              <span>React, Tailwind CSS, NodeJS</span>
+            </div>
+            <div className="skill-item">
+              <span className="skill-label">Tools/Platforms:</span>
+              <span>MySQL, MongoDB, Figma, Git, GitHub, Render, Vercel</span>
+            </div>
+            <div className="skill-item">
+              <span className="skill-label">Soft Skills:</span>
+              <span>Problem-Solving, Team work, Adaptability, Critical Thinking</span>
+            </div>
+          </div>
         </section>
 
         {/* PROJECTS */}
@@ -182,8 +201,8 @@ const Resume = () => {
           
           <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" className="blue-link">GitHub</a></p>
-              <p>Dec’ 2025</p>
+              <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
+              <p style={{ fontWeight: 500 }}>Dec’ 2025</p>
             </div>
             <ul style={{ listStyleType: 'disc' }}>
               <li>Architected an AI-driven pipeline to evaluate emotional tone in live helpdesk calls.</li>
@@ -195,10 +214,10 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.8rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.6rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">AgroTools - Farmers’ E-Commerce Platform | <a href="https://github.com/himanshu952354" className="blue-link">GitHub</a></p>
-              <p>Sept’ 2025</p>
+              <p className="bold-blue">AgroTools - Farmers’ E-Commerce Platform | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
+              <p style={{ fontWeight: 500 }}>Sept’ 2025</p>
             </div>
             <ul style={{ listStyleType: 'disc' }}>
               <li>Developed a scalable full-stack marketplace tailored for agricultural commerce.</li>
@@ -209,10 +228,10 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.8rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.6rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">Contact Manager - Java Swing GUI Application | <a href="https://github.com/himanshu952354" className="blue-link">GitHub</a></p>
-              <p>Jul’ 2025</p>
+              <p className="bold-blue">Contact Manager - Java Swing GUI Application | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
+              <p style={{ fontWeight: 500 }}>Jul’ 2025</p>
             </div>
             <ul style={{ listStyleType: 'disc' }}>
               <li>Designed a desktop contact system supporting CRUD and instant search operations.</li>
@@ -231,7 +250,7 @@ const Resume = () => {
           <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Lovely Professional University | <a href="#" className="blue-link">Certificate</a></p>
-              <p>Jun’ 2025 – Jul’ 2025</p>
+              <p style={{ fontWeight: 500 }}>Jun’ 2025 – Jul’ 2025</p>
             </div>
             <p style={{ fontWeight: 500 }}>Placement Ace: Java Bootcamp (Leetcode-Codeforces Edition)</p>
             <ul style={{ listStyleType: 'disc' }}>
@@ -247,25 +266,25 @@ const Resume = () => {
           <h2 className="section-title">CERTIFICATES</h2>
           <div className="section-divider"></div>
           <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
-            <div className="flex-between">
+            <div className="flex-between" style={{ marginBottom: '0.1rem' }}>
               <p>ChatGPT- 4 Prompt Engineering - <a href="#" className="blue-link">Infosys</a></p>
-              <p>Aug’ 2025</p>
+              <p style={{ fontWeight: 500 }}>Aug’ 2025</p>
             </div>
-            <div className="flex-between">
+            <div className="flex-between" style={{ marginBottom: '0.1rem' }}>
               <p>Java Programming - <a href="#" className="blue-link">NeoColab</a></p>
-              <p>May’ 2025</p>
+              <p style={{ fontWeight: 500 }}>May’ 2025</p>
             </div>
-            <div className="flex-between">
+            <div className="flex-between" style={{ marginBottom: '0.1rem' }}>
               <p>Human Computer Interaction - <a href="#" className="blue-link">NPTEL</a></p>
-              <p>Apr’ 2025</p>
+              <p style={{ fontWeight: 500 }}>Apr’ 2025</p>
             </div>
-            <div className="flex-between">
+            <div className="flex-between" style={{ marginBottom: '0.1rem' }}>
               <p>Data Structures and Algorithm - <a href="#" className="blue-link">NeoColab</a></p>
-              <p>Dec’ 2024</p>
+              <p style={{ fontWeight: 500 }}>Dec’ 2024</p>
             </div>
-            <div className="flex-between">
+            <div className="flex-between" style={{ marginBottom: '0.1rem' }}>
               <p>Responsive Web Design - <a href="#" className="blue-link">FreeCodeCamp</a></p>
-              <p>Nov’ 2023</p>
+              <p style={{ fontWeight: 500 }}>Nov’ 2023</p>
             </div>
           </div>
         </section>
@@ -287,30 +306,32 @@ const Resume = () => {
           <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Lovely Professional University</p>
-              <p>Phagwara, Punjab</p>
+              <p style={{ fontWeight: 500 }}>Phagwara, Punjab</p>
             </div>
             <div className="flex-between">
               <p>Bachelor of Technology - Computer Science and Engineering; <strong>CGPA: 7.37</strong></p>
-              <p>Since August 2023</p>
+              <p style={{ fontWeight: 500 }}>Since August 2023</p>
             </div>
-            <div style={{ marginTop: '0.5rem' }}>
+            
+            <div style={{ marginTop: '0.6rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Ram Krishna College</p>
-                <p>Madhubani, Bihar</p>
+                <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
               </div>
               <div className="flex-between">
                 <p>Intermediate; <strong>Percentage: 83%</strong></p>
-                <p>April 2020 - March 2022</p>
+                <p style={{ fontWeight: 500 }}>April 2020 - March 2022</p>
               </div>
             </div>
-            <div style={{ marginTop: '0.5rem' }}>
+
+            <div style={{ marginTop: '0.6rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Regional Secondary School</p>
-                <p>Madhubani, Bihar</p>
+                <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
               </div>
               <div className="flex-between">
                 <p>Matriculation; <strong>Percentage: 82%</strong></p>
-                <p>April 2019 - March 2020</p>
+                <p style={{ fontWeight: 500 }}>April 2019 - March 2020</p>
               </div>
             </div>
           </div>
