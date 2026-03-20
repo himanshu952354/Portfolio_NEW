@@ -51,14 +51,14 @@ const Resume = () => {
           font-size: 1rem;
           font-weight: bold;
           color: ${primaryColor};
-          margin-top: 1.2rem;
-          margin-bottom: 0.1rem !important;
+          margin-top: 0.6rem;
+          margin-bottom: 0.05rem !important;
           text-align: left !important;
           text-transform: uppercase;
         }
         .section-divider {
           border-bottom: 1.5px solid #333;
-          margin-bottom: 0.4rem;
+          margin-bottom: 0.2rem;
         }
         .blue-link {
           color: ${primaryColor};
@@ -199,7 +199,7 @@ const Resume = () => {
           <h2 className="section-title">PROJECTS</h2>
           <div className="section-divider"></div>
           
-          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Dec’ 2025</p>
@@ -214,7 +214,7 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.6rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">AgroTools - Farmers’ E-Commerce Platform | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Sept’ 2025</p>
@@ -228,7 +228,7 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.6rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Contact Manager - Java Swing GUI Application | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Jul’ 2025</p>
@@ -303,7 +303,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">EDUCATION</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Lovely Professional University</p>
               <p style={{ fontWeight: 500 }}>Phagwara, Punjab</p>
@@ -313,7 +313,7 @@ const Resume = () => {
               <p style={{ fontWeight: 500 }}>Since August 2023</p>
             </div>
             
-            <div style={{ marginTop: '0.6rem' }}>
+            <div style={{ marginTop: '0.3rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Ram Krishna College</p>
                 <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
@@ -324,7 +324,7 @@ const Resume = () => {
               </div>
             </div>
 
-            <div style={{ marginTop: '0.6rem' }}>
+            <div style={{ marginTop: '0.3rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Regional Secondary School</p>
                 <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
