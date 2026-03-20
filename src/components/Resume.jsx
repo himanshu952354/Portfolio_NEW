@@ -47,6 +47,17 @@ const Resume = () => {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
           line-height: 1.35;
         }
+        .resume-paper section {
+          padding: 0 !important;
+          display: block !important;
+        }
+        .resume-paper ul {
+          list-style-type: disc !important;
+          padding-left: 1.5rem !important;
+        }
+        .resume-paper li {
+          display: list-item !important;
+        }
         .section-title {
           font-size: 0.95rem;
           font-weight: bold;
@@ -57,7 +68,7 @@ const Resume = () => {
           text-transform: uppercase;
         }
         .section-divider {
-          border-bottom: 1.3px solid #666;
+          border-bottom: 1.3px solid ${primaryColor};
           margin-bottom: 0.1rem;
         }
         .blue-link {
@@ -74,15 +85,20 @@ const Resume = () => {
           align-items: baseline;
         }
         .skill-item {
-          display: flex;
-          align-items: flex-start;
           margin-bottom: 0.05rem;
           font-size: 0.92rem;
         }
         .skill-label {
+          display: inline-block;
           min-width: 130px;
           color: ${primaryColor};
           font-weight: bold;
+          vertical-align: top;
+        }
+        .skill-item > span:nth-child(2) {
+          display: inline-block;
+          width: calc(100% - 135px);
+          vertical-align: top;
         }
         ul {
           padding-left: 1.2rem;
@@ -174,24 +190,24 @@ const Resume = () => {
         <section>
           <h2 className="section-title">SKILLS</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.1rem' }}>
-            <div className="skill-item">
+          <ul style={{ marginTop: '0.1rem', listStyleType: 'disc' }}>
+            <li className="skill-item">
               <span className="skill-label">Languages:</span>
               <span>Java, JavaScript, C++, PHP, HTML</span>
-            </div>
-            <div className="skill-item">
+            </li>
+            <li className="skill-item">
               <span className="skill-label">Frameworks:</span>
               <span>React, Tailwind CSS, NodeJS</span>
-            </div>
-            <div className="skill-item">
+            </li>
+            <li className="skill-item">
               <span className="skill-label">Tools/Platforms:</span>
               <span>MySQL, MongoDB, Figma, Git, GitHub, Render, Vercel</span>
-            </div>
-            <div className="skill-item">
+            </li>
+            <li className="skill-item">
               <span className="skill-label">Soft Skills:</span>
               <span>Problem-Solving, Team work, Adaptability, Critical Thinking</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </section>
 
         {/* PROJECTS */}
@@ -209,19 +225,6 @@ const Resume = () => {
               <li>Automated speech-to-text conversion paired with real-time sentiment tagging.</li>
               <li>Leveraged NLP and ML techniques to extract behavioral insights.</li>
               <li>Streamlined escalation workflows via intelligent high-risk call alerts.</li>
-            </ul>
-          </div>
-
-          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
-            <div className="flex-between">
-              <p className="bold-blue">Giftit - Gift Recommender Chatbot | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
-              <p style={{ fontWeight: 500 }}>Oct’ 2025</p>
-            </div>
-            <ul style={{ listStyleType: 'disc' }}>
-              <li>Designed an AI chatbot to offer personalized gift suggestions.</li>
-              <li>Integrated natural language processing to understand user preferences.</li>
-              <li>Utilized a recommendation engine for accurate results.</li>
-              <li><span className="bold-blue">Tech stack used:</span> Python, Flask, OpenAI API, JavaScript</li>
             </ul>
           </div>
 
