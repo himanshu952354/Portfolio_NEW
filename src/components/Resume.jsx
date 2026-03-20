@@ -94,6 +94,8 @@ const Resume = () => {
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          data-aos="fade-up"
+          data-aos-duration="800"
           href="/Portfolio_NEW/Resume.pdf"
           download="Himanshu_Shekhar_Resume.pdf"
           className="print-button"
