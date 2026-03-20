@@ -45,20 +45,20 @@ const Resume = () => {
           border: 1px solid #ddd;
           color: #333;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          line-height: 1.4;
+          line-height: 1.35;
         }
         .section-title {
-          font-size: 1rem;
+          font-size: 0.95rem;
           font-weight: bold;
           color: ${primaryColor};
-          margin-top: 0.8rem;
+          margin-top: 0.4rem;
           margin-bottom: 0.05rem !important;
           text-align: left !important;
           text-transform: uppercase;
         }
         .section-divider {
-          border-bottom: 1.5px solid #333;
-          margin-bottom: 0.2rem;
+          border-bottom: 1.3px solid #666;
+          margin-bottom: 0.1rem;
         }
         .blue-link {
           color: ${primaryColor};
@@ -76,23 +76,23 @@ const Resume = () => {
         .skill-item {
           display: flex;
           align-items: flex-start;
-          margin-bottom: 0.2rem;
-          font-size: 0.95rem;
+          margin-bottom: 0.05rem;
+          font-size: 0.92rem;
         }
         .skill-label {
-          min-width: 140px;
+          min-width: 130px;
           color: ${primaryColor};
           font-weight: bold;
         }
         ul {
           padding-left: 1.2rem;
-          margin: 0.2rem 0;
+          margin: 0.1rem 0;
         }
         li {
-          margin-bottom: 0.1rem;
+          margin-bottom: 0.05rem;
         }
         p {
-          margin: 0.1rem 0;
+          margin: 0.05rem 0;
         }
       `}</style>
 
@@ -103,7 +103,7 @@ const Resume = () => {
         alignItems: 'flex-end', 
         width: '100%',
         maxWidth: '900px',
-        marginBottom: '2rem',
+        marginBottom: '1.5rem',
         flexWrap: 'wrap',
         gap: '1rem'
       }}>
@@ -157,7 +157,7 @@ const Resume = () => {
       >
         {/* Document Header Section */}
         <header>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: primaryColor, margin: '0 0 0.2rem 0' }}>Himanshu Shekhar</h1>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: primaryColor, margin: '0 0 0.1rem 0' }}>Himanshu Shekhar</h1>
           <div className="flex-between" style={{ fontSize: '0.92rem' }}>
             <div style={{ flex: 1 }}>
               <p>LinkedIn: <a className="blue-link" href="https://linkedin.com/in/himanshu9523" target="_blank" rel="noreferrer">linkedin.com/in/himanshu9523</a></p>
@@ -174,7 +174,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">SKILLS</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.3rem' }}>
+          <div style={{ marginTop: '0.1rem' }}>
             <div className="skill-item">
               <span className="skill-label">Languages:</span>
               <span>Java, JavaScript, C++, PHP, HTML</span>
@@ -199,7 +199,7 @@ const Resume = () => {
           <h2 className="section-title">PROJECTS</h2>
           <div className="section-divider"></div>
           
-          <div style={{ marginTop: '0.3rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Dec’ 2025</p>
@@ -207,13 +207,12 @@ const Resume = () => {
             <ul style={{ listStyleType: 'disc' }}>
               <li>Architected an AI-driven pipeline to evaluate emotional tone in live helpdesk calls.</li>
               <li>Automated speech-to-text conversion paired with real-time sentiment tagging.</li>
-              <li>Crafted an interactive dashboard for continuous sentiment visualization.</li>
               <li>Leveraged NLP and ML techniques to extract behavioral insights.</li>
               <li>Streamlined escalation workflows via intelligent high-risk call alerts.</li>
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Giftit - Gift Recommender Chatbot | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Oct’ 2025</p>
@@ -226,7 +225,7 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">AgroTools - Farmers’ E-Commerce Platform | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Sept’ 2025</p>
@@ -239,7 +238,7 @@ const Resume = () => {
             </ul>
           </div>
 
-          <div style={{ marginTop: '0.4rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Contact Manager - Java Swing GUI Application | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
               <p style={{ fontWeight: 500 }}>Jul’ 2025</p>
@@ -257,7 +256,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">TRAINING</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.3rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Lovely Professional University | <a href="#" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>Jun’ 2025 – Jul’ 2025</p>
@@ -275,28 +274,28 @@ const Resume = () => {
         <section>
           <h2 className="section-title">CERTIFICATES</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.3rem', fontSize: '0.9rem' }}>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+          <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>ChatGPT- 4 Prompt Engineering - <a href="#" className="blue-link">Infosys</a></p>
               <p style={{ fontWeight: 500 }}>Aug’ 2025</p>
             </div>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>Introduction to Front-End Development - <a href="#" className="blue-link">Coursera</a></p>
               <p style={{ fontWeight: 500 }}>Jun’ 2024</p>
             </div>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>Java Programming - <a href="#" className="blue-link">NeoColab</a></p>
               <p style={{ fontWeight: 500 }}>May’ 2025</p>
             </div>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>Human Computer Interaction - <a href="#" className="blue-link">NPTEL</a></p>
               <p style={{ fontWeight: 500 }}>Apr’ 2025</p>
             </div>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>Data Structures and Algorithm - <a href="#" className="blue-link">NeoColab</a></p>
               <p style={{ fontWeight: 500 }}>Dec’ 2024</p>
             </div>
-            <div className="flex-between" style={{ marginBottom: '0.05rem' }}>
+            <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
               <p>Responsive Web Design - <a href="#" className="blue-link">FreeCodeCamp</a></p>
               <p style={{ fontWeight: 500 }}>Nov’ 2023</p>
             </div>
@@ -307,7 +306,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">ACHIEVEMENTS</h2>
           <div className="section-divider"></div>
-          <ul style={{ listStyleType: 'disc', marginTop: '0.3rem', fontSize: '0.9rem' }}>
+          <ul style={{ listStyleType: 'disc', marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <li>Solved 200+ algorithmic problems across LeetCode, CodeChef, and Codeforces.</li>
             <li>Achieved ratings of 1500+ (LeetCode), 1200+ (CodeChef), and 1000+ (Codeforces). <a href="#" className="blue-link">Codolio</a></li>
           </ul>
@@ -317,7 +316,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">EDUCATION</h2>
           <div className="section-divider"></div>
-          <div style={{ marginTop: '0.3rem', fontSize: '0.9rem' }}>
+          <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Lovely Professional University</p>
               <p style={{ fontWeight: 500 }}>Phagwara, Punjab</p>
@@ -327,7 +326,7 @@ const Resume = () => {
               <p style={{ fontWeight: 500 }}>Since August 2023</p>
             </div>
             
-            <div style={{ marginTop: '0.3rem' }}>
+            <div style={{ marginTop: '0.2rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Ram Krishna College</p>
                 <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
@@ -338,7 +337,7 @@ const Resume = () => {
               </div>
             </div>
 
-            <div style={{ marginTop: '0.3rem' }}>
+            <div style={{ marginTop: '0.2rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Regional Secondary School</p>
                 <p style={{ fontWeight: 500 }}>Madhubani, Bihar</p>
