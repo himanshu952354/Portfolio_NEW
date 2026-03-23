@@ -22,7 +22,8 @@ export const StaggeredMenu = ({
   closeOnClickAway = true,
   onMenuOpen,
   onMenuClose,
-  setIsHoveringMenu
+  setIsHoveringMenu,
+  setMenuPosition
 }) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
@@ -185,7 +186,6 @@ export const StaggeredMenu = ({
   }, []);
 
   const playOpen = useCallback(() => {
-    if (busyRef.current) return;
     busyRef.current = true;
     const tl = buildOpenTimeline();
     if (tl) {
@@ -391,17 +391,31 @@ export const StaggeredMenu = ({
         {/* Empty div to balance space since logo is omitted in staggered menu here and handled in Navbar */}
         <div></div>
 
-        <button
-          ref={toggleBtnRef}
-          className="sm-toggle"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="staggered-menu-panel"
+        <div 
+          className="sm-toggle-magnetic"
+          style={{ padding: '35px', margin: '-35px', display: 'inline-flex', alignItems: 'center' }}
+          onMouseEnter={() => {
+            setIsHoveringMenu && setIsHoveringMenu(true);
+            if (toggleBtnRef.current) {
+              const rect = toggleBtnRef.current.getBoundingClientRect();
+              setMenuPosition && setMenuPosition({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+            }
+          }}
+          onMouseLeave={() => {
+            setIsHoveringMenu && setIsHoveringMenu(false);
+            setMenuPosition && setMenuPosition(null);
+          }}
           onClick={toggleMenu}
-          type="button"
-          onMouseEnter={() => setIsHoveringMenu && setIsHoveringMenu(true)}
-          onMouseLeave={() => setIsHoveringMenu && setIsHoveringMenu(false)}
         >
+          <button
+            ref={toggleBtnRef}
+            className="sm-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+            onClick={(e) => { e.stopPropagation(); toggleMenu(); }}
+            type="button"
+          >
           <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
             <span ref={textInnerRef} className="sm-toggle-textInner">
               {textLines.map((l, i) => (
@@ -416,6 +430,7 @@ export const StaggeredMenu = ({
             <span ref={plusVRef} className="sm-icon-line sm-icon-line-v" />
           </span>
         </button>
+        </div>
       </header>
 
       <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>
