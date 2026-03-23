@@ -18,7 +18,7 @@ const Resume = () => {
     <div className="resume-page" style={{ 
       padding: '120px 20px 60px', 
       minHeight: '100vh', 
-      backgroundColor: '#f5f5f5',
+      backgroundColor: 'var(--bg-color)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
