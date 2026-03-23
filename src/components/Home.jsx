@@ -167,7 +167,8 @@ export default function Home() {
           border: '1.5px solid var(--text-secondary)',
           borderRadius: '50%',
           zIndex: 5,
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          willChange: 'transform'
         }} 
       />
       <motion.div
@@ -193,7 +194,8 @@ export default function Home() {
           border: '1.5px solid var(--text-secondary)',
           borderRadius: '50%',
           zIndex: 5,
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          willChange: 'transform'
         }} 
       />
 

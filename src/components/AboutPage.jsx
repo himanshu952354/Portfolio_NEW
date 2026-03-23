@@ -171,7 +171,8 @@ export default function AboutPage() {
             border: '1.5px solid var(--text-secondary)',
             borderRadius: '50%',
             zIndex: 0,
-            pointerEvents: 'none'
+            pointerEvents: 'none',
+            willChange: 'transform'
           }} 
         />
         <motion.div
@@ -197,7 +198,8 @@ export default function AboutPage() {
             border: '1.5px solid var(--text-secondary)',
             borderRadius: '50%',
             zIndex: 0,
-            pointerEvents: 'none'
+            pointerEvents: 'none',
+            willChange: 'transform'
           }} 
         />
 
