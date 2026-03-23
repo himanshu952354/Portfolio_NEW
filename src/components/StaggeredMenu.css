@@ -358,26 +358,23 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .staggered-menu-panel {
-    width: 100%;
-    left: 0;
-    right: 0;
+    padding: 5em 1.5em 1.5em 1.5em !important;
   }
 
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
-  }
-}
-
-@media (max-width: 640px) {
-  .staggered-menu-panel {
-    width: 100%;
-    left: 0;
-    right: 0;
+  .sm-panel-item {
+    font-size: 2rem !important;
+    letter-spacing: -1px !important;
   }
 
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
+  .sm-panel-list {
+    gap: 1.5rem !important;
+  }
+
+  .sm-panel-list[data-numbering] .sm-panel-item::after {
+    font-size: 14px !important;
+    top: 0.15em !important;
+    margin-left: 4px !important;
   }
 }
