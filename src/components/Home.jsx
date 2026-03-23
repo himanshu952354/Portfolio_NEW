@@ -202,14 +202,14 @@ export default function Home() {
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .home-circle-1 {
-            width: 250px !important;
-            height: 250px !important;
+            width: 50vw !important;
+            height: 50vw !important;
             left: 5% !important;
             top: 20% !important;
           }
           .home-circle-2 {
-            width: 300px !important;
-            height: 300px !important;
+            width: 60vw !important;
+            height: 60vw !important;
             left: 15% !important;
             top: 35% !important;
           }

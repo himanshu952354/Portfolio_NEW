@@ -206,14 +206,14 @@ export default function AboutPage() {
         <style dangerouslySetInnerHTML={{ __html: `
           @media (max-width: 768px) {
             .about-circle-1 {
-              width: 220px !important;
-              height: 220px !important;
+              width: 50vw !important;
+              height: 50vw !important;
               left: 10% !important;
               top: 15% !important;
             }
             .about-circle-2 {
-              width: 260px !important;
-              height: 260px !important;
+              width: 60vw !important;
+              height: 60vw !important;
               left: 20% !important;
               top: 28% !important;
             }
