@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const formContainer = {
   hidden: { opacity: 0 },
@@ -23,12 +24,30 @@ export default function Contact({ paddingBottom = '10rem' }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Optional: Email logic redirect or trigger
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+
+    // 1. FILL IN THESE THREE VALUES FROM YOUR EMAILJS DASHBOARD
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID; 
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID; 
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY; 
+
+    // 2. We align the keys exactly to match your screenshot
+    const templateParams = {
+      name: formData.name,      
+      email: formData.email,    
+      message: formData.message,
+      title: 'New message from Portfolio'
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        alert("Something went wrong with EmailJS setup. Double check your IDs!");
+      });
   };
 
   const inputStyle = {
@@ -105,8 +124,66 @@ export default function Contact({ paddingBottom = '10rem' }) {
           </motion.div>
         </div>
 
-        <motion.form 
-          onSubmit={handleSubmit}
+        {isSubmitted ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              padding: '4rem 2rem',
+              width: '100%',
+              minHeight: '350px'
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
+              style={{
+                width: '60px',
+                height: '60px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--text-primary)',
+                color: 'var(--bg-color)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '2rem',
+                marginBottom: '1.5rem'
+              }}
+            >
+              ✓
+            </motion.div>
+            <h3 style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginBottom: '0.8rem', fontWeight: 500 }}>Message Sent!</h3>
+            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '2rem', maxWidth: '350px' }}>
+              Thank you for reaching out. I have received your message and will get back to you soon.
+            </p>
+            <motion.button
+              onClick={() => setIsSubmitted(false)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                padding: '0.8rem 1.5rem',
+                backgroundColor: 'transparent',
+                border: '1px solid var(--text-primary)',
+                color: 'var(--text-primary)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: 500
+              }}
+            >
+              Send another message
+            </motion.button>
+          </motion.div>
+        ) : (
+          <motion.form 
+            onSubmit={handleSubmit}
           variants={formContainer}
           initial="hidden"
           whileInView="visible"
@@ -180,6 +257,7 @@ export default function Contact({ paddingBottom = '10rem' }) {
             </motion.button>
           </div>
         </motion.form>
+        )}
       </div>
     </section>
   );
