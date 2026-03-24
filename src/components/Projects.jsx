@@ -7,7 +7,7 @@ const projectsData = [
     title: "Plan Pilot",
     description: "A modern Dashboard containing intuitive planning tools, visual metrics, and fully responsive layouts.",
     tech: ["MERN Stack", "React", "Node.js", "MongoDB"],
-    github: "#",
+    github: "https://github.com/himanshu952354/Plan-Pilot",
     live: "https://plan-pilot-blush.vercel.app/",
     images: [
       "/Portfolio_NEW/projects/plan_pilot.png",
@@ -20,7 +20,7 @@ const projectsData = [
     title: "Echo",
     description: "AI-powered sentiment analysis and performance metrics for real-time call center insights.",
     tech: ["React", "Node.js", "AI Analytics", "Tailwind"],
-    github: "#",
+    github: "https://github.com/himanshu952354/Echo",
     live: "https://echo-gold.vercel.app/",
     images: [
       "/Portfolio_NEW/projects/echo_gold.png",
@@ -33,8 +33,8 @@ const projectsData = [
     title: "AgroTools",
     description: "A digital marketplace empowering modern agriculture with premium farming supplies, equipment, and direct-to-farm delivery.",
     tech: ["HTML5", "CSS3", "PHP", "MySQL"],
-    github: "#",
-    live: "http://localhost/Project/Project_FB/Home.php",
+    github: "https://github.com/himanshu952354/AgroTools/tree/master",
+    live: "https://agrotools.free.nf/Home.php",
     images: [
       "/Portfolio_NEW/projects/agrotools.png",
       "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=800&q=80",
@@ -44,7 +44,7 @@ const projectsData = [
   }
 ];
 
-const ExploreButton = ({ href, ...props }) => (
+const ExploreButton = ({ href, Icon, children, ...props }) => (
   <motion.a
     href={href}
     target="_blank"
@@ -61,13 +61,15 @@ const ExploreButton = ({ href, ...props }) => (
       justifyContent: 'center',
       textDecoration: 'none',
       color: 'var(--text-primary)',
-      fontSize: '0.9rem',
       fontWeight: '500',
-      marginTop: '2rem'
+      cursor: 'pointer'
     }}
     {...props}
   >
-    Explore
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+      {Icon && <Icon style={{ fontSize: '1.3rem' }} />}
+      <span style={{ fontSize: '0.85rem' }}>{children || "Explore"}</span>
+    </div>
   </motion.a>
 );
 
@@ -172,7 +174,10 @@ export default function Projects() {
                   >
                     {project.description}
                   </p>
-                  <ExploreButton href={project.live} />
+                  <div style={{ display: 'flex', gap: '1.5rem', marginTop: '2rem' }}>
+                    <ExploreButton href={project.live} Icon={FiExternalLink}>Live</ExploreButton>
+                    <ExploreButton href={project.github} Icon={FiGithub}>GitHub</ExploreButton>
+                  </div>
                 </div>
               </div>
 

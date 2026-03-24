@@ -28,7 +28,7 @@ const certificates = [
     title: "Human Computer Interaction",
     issuer: "NPTEL",
     date: "2025",
-    link: "https://drive.google.com/drive/folders/1aNGYgxHohKM0LAT96LGJpk7rLLKOl4fH?usp=sharing"
+    link: "https://drive.google.com/file/d/1N2iTGO2KtDmcqHEEn_dVyXgwxnX03KOy/view?usp=sharing"
   },
   {
     title: "ChatGPT-4 Prompt Engineering: ChatGPT, Generative AI & LLM",
@@ -40,7 +40,7 @@ const certificates = [
     title: "Fundamentals of Network Communication",
     issuer: "University of Colorado",
     date: "2024",
-    link: "https://coursera.org/verify/E5WER3UWKGCJ"
+    link: "https://drive.google.com/file/d/1hOR3TvMWFaRQCCmw9u1gnPX2hBHUO8zp/view?usp=sharing"
   },
   {
     title: "Java Programming",

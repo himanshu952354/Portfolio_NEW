@@ -322,7 +322,7 @@ const Resume = () => {
               <p style={{ fontWeight: 500 }}>May’ 2025</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>Human Computer Interaction - <a href="#" className="blue-link">NPTEL</a></p>
+              <p>Human Computer Interaction - <a href="https://drive.google.com/file/d/1N2iTGO2KtDmcqHEEn_dVyXgwxnX03KOy/view?usp=sharing" className="blue-link" target="_blank" rel="noreferrer">NPTEL</a></p>
               <p style={{ fontWeight: 500 }}>Apr’ 2025</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
