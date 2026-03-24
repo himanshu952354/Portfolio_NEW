@@ -19,15 +19,10 @@ const moreProjectsData = [
     image: "https://picsum.photos/seed/weather/600/400"
   },
   {
-    title: "E-commerce API",
-    link: "#",
-    image: "https://picsum.photos/seed/ecommerce/600/400"
-  },
-  {
-    title: "Task Management Tool",
-    link: "#",
-    image: "https://picsum.photos/seed/task/600/400"
-  },
+    title: "Contact Manager GUI",
+    link: "https://github.com/himanshu952354/Contact-Search-GUI",
+    image: "/Portfolio_NEW/projects/contact-manager-thumbnail.png"
+  }
 ];
 
 const ProjectItem = ({ title, link, image }) => {
