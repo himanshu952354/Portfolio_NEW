@@ -91,7 +91,7 @@ const FlipCard = ({ cert }) => {
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
-          zIndex: isHovered ? 1 : 2
+          transform: 'translateZ(1px)'
         }}>
           <div style={{ fontSize: '3rem', color: '#000', marginBottom: '1.5rem' }}><FiAward /></div>
           <h3 style={{ fontSize: '1.2rem', fontWeight: 600, margin: '0 0 0.5rem 0', color: '#000' }}>{cert.title}</h3>
@@ -113,9 +113,8 @@ const FlipCard = ({ cert }) => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          transform: 'rotateY(180deg)',
-          textAlign: 'center',
-          zIndex: isHovered ? 2 : 1
+          transform: 'rotateY(180deg) translateZ(1px)',
+          textAlign: 'center'
         }}>
           <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '0.8rem' }}>Issued: {cert.date}</p>
           <a href={cert.link} target="_blank" rel="noopener noreferrer" style={{
