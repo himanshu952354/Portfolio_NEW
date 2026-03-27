@@ -6,11 +6,11 @@ import Certificates from './Certificates';
 import CP from './CP';
 import Education from './Education';
 import Contact from './Contact';
-import { 
-  SiHtml5, SiCss, SiSass, SiBootstrap, SiTailwindcss, SiJavascript, 
-  SiTypescript, SiReact, SiNextdotjs, SiAstro, SiReactquery, 
+import {
+  SiHtml5, SiCss, SiSass, SiBootstrap, SiTailwindcss, SiJavascript,
+  SiTypescript, SiReact, SiNextdotjs, SiAstro, SiReactquery,
   SiSwr, SiStyledcomponents, SiGit, SiGreensock, SiFigma, SiFramer,
-  SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiPython, 
+  SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiPython,
   SiCplusplus, SiPostman, SiGithub, SiC, SiVercel, SiRender, SiCanva
 } from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
@@ -70,12 +70,12 @@ export default function AboutPage() {
       fontFamily: "'Inter', sans-serif"
     }}>
       {/* Intro Hero with Watermark */}
-      <section style={{ 
+      <section id="about-top" style={{ 
         position: 'relative', 
         padding: '12rem var(--spacing-x) 4rem var(--spacing-x)',
         overflow: 'visible'
       }}>
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 0.03, x: 0 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px' }}>
           <div style={{ overflow: 'hidden' }}>
-            <motion.h2 
+            <motion.h2
               initial={{ y: '120%', opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
@@ -113,7 +113,7 @@ export default function AboutPage() {
             </motion.h2>
           </div>
           <div style={{ overflow: 'hidden' }}>
-            <motion.p 
+            <motion.p
               initial={{ y: '120%', opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1], delay: 0.2 }}
@@ -131,7 +131,7 @@ export default function AboutPage() {
           </div>
 
           <div style={{ overflow: 'hidden' }}>
-            <motion.div 
+            <motion.div
               initial={{ y: '120%', opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1], delay: 0.4 }}
@@ -152,8 +152,8 @@ export default function AboutPage() {
         {/* Background Circles */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: 0.4, 
+          animate={{
+            opacity: 0.4,
             scale: 1,
             x: [0, 15, -10, 12, 0],
             y: [0, -12, 10, -5, 0]
@@ -175,12 +175,12 @@ export default function AboutPage() {
             zIndex: 0,
             pointerEvents: 'none',
             willChange: 'transform'
-          }} 
+          }}
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: 0.3, 
+          animate={{
+            opacity: 0.3,
             scale: 1,
             x: [0, -20, 15, -8, 0],
             y: [0, 15, -15, 8, 0]
@@ -202,38 +202,38 @@ export default function AboutPage() {
             zIndex: 0,
             pointerEvents: 'none',
             willChange: 'transform'
-          }} 
+          }}
         />
 
       </section>
 
       {/* Tech & Tools Grid */}
       <section id="tech" style={{ padding: '4rem var(--spacing-x) 8rem var(--spacing-x)' }}>
-        <h2 style={{ 
-          fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
-          fontWeight: 400, 
-          marginBottom: '5rem', 
-          letterSpacing: '-0.04em' 
+        <h2 style={{
+          fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+          fontWeight: 400,
+          marginBottom: '5rem',
+          letterSpacing: '-0.04em'
         }}>Tech & Tools</h2>
-        <motion.div 
-          className="tech-grid" 
+        <motion.div
+          className="tech-grid"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(5, 1fr)', 
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, 1fr)',
             gap: '4rem 2rem',
             maxWidth: '1200px'
           }}
         >
           {techStack.map((tool) => (
-            <motion.div 
-              key={tool.name} 
+            <motion.div
+              key={tool.name}
               variants={staggerItem}
-              style={{ 
-                fontSize: '1.2rem', 
+              style={{
+                fontSize: '1.2rem',
                 color: 'var(--text-secondary)',
                 fontWeight: 400,
                 display: 'flex',
@@ -246,9 +246,10 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </motion.div>
-        
+
         {/* Mobile alternative for the grid if needed */}
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @media (max-width: 1024px) {
             .tech-grid { grid-template-columns: repeat(3, 1fr) !important; }
           }
@@ -260,10 +261,10 @@ export default function AboutPage() {
 
       {/* Training Section */}
       <section id="training" style={{ padding: '2rem var(--spacing-x) 3rem var(--spacing-x)' }}>
-        <h2 style={{ 
-          fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', 
-          fontWeight: 400, 
-          marginBottom: '1.8rem', 
+        <h2 style={{
+          fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+          fontWeight: 400,
+          marginBottom: '1.8rem',
           letterSpacing: '-0.04em',
           color: 'var(--text-primary)'
         }}>Training</h2>
@@ -300,11 +301,11 @@ export default function AboutPage() {
 
               <div style={{ marginTop: '1.2rem' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#222', margin: 0 }}>Core Learnings:</h4>
-                <ul style={{ 
-                  color: 'var(--text-secondary)', 
-                  margin: '0.4rem 0 0 0', 
-                  fontSize: '0.96rem', 
-                  maxWidth: '800px', 
+                <ul style={{
+                  color: 'var(--text-secondary)',
+                  margin: '0.4rem 0 0 0',
+                  fontSize: '0.96rem',
+                  maxWidth: '800px',
                   lineHeight: 1.5,
                   listStyleType: 'disc',
                   paddingLeft: '1.5rem',
@@ -319,11 +320,11 @@ export default function AboutPage() {
 
               <div style={{ marginTop: '1.2rem' }}>
                 <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#222', margin: 0 }}>Project: Contact Management System</h4>
-                <ul style={{ 
-                  color: 'var(--text-secondary)', 
-                  margin: '0.4rem 0 0 0', 
-                  fontSize: '0.96rem', 
-                  maxWidth: '800px', 
+                <ul style={{
+                  color: 'var(--text-secondary)',
+                  margin: '0.4rem 0 0 0',
+                  fontSize: '0.96rem',
+                  maxWidth: '800px',
                   lineHeight: 1.5,
                   listStyleType: 'disc',
                   paddingLeft: '1.5rem',
@@ -338,8 +339,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <motion.a 
-              href="https://drive.google.com/file/d/1HY9LW4fPVX3I7Y1fFASYLD8pMVVeJf8x/view?usp=sharing" 
+            <motion.a
+              href="https://drive.google.com/file/d/1HY9LW4fPVX3I7Y1fFASYLD8pMVVeJf8x/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1, backgroundColor: '#000', color: '#fff' }}

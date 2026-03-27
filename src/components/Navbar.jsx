@@ -6,7 +6,17 @@ import StaggeredMenu from './StaggeredMenu';
 const navLinks = [
   { title: 'Home', path: '/' },
   { title: 'Projects', path: '/#projects' },
-  { title: 'About Me', path: '/about' },
+  { 
+    title: 'About Me', 
+    path: '/about',
+    subItems: [
+      { label: 'Tech Stack', link: '/about#tech' },
+      { label: 'Training', link: '/about#training' },
+      { label: 'Certificates', link: '/about#certificates' },
+      { label: 'Achievements', link: '/about#cp' },
+      { label: 'Education', link: '/about#education' }
+    ]
+  },
   { title: 'Resume', path: '/resume' }
 ];
 
@@ -14,7 +24,8 @@ const menuItems = navLinks.map(link => ({
   label: link.title,
   ariaLabel: `Go to ${link.title} page`,
   link: link.path,
-  target: link.target
+  target: link.target,
+  subItems: link.subItems
 }));
 
 

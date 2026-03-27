@@ -446,55 +446,85 @@ export const StaggeredMenu = ({
                     : location.pathname === it.link;
 
                 return (
-                  <li className="sm-panel-itemWrap" key={it.label + idx}>
-                    {isRouterLink ? (
-                      <RouterLink
-                        className="sm-panel-item"
-                        to={it.link}
-                        target={it.target}
-                        rel={it.target === '_blank' ? 'noopener noreferrer' : undefined}
-                        aria-label={it.ariaLabel}
-                        data-index={idx + 1}
-                        style={isActive ? { color: '#5227ff' } : undefined}
-                        onClick={() => {
-                          closeMenu();
-                          if (it.link === '/' && location.pathname === '/') {
-                            setTimeout(() => {
-                              window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }, 350);
-                          } else if (it.link.startsWith('/#') && location.pathname === '/') {
-                            const id = it.link.replace('/#', '');
-                            const element = document.getElementById(id);
-                            if (element) {
+                  <React.Fragment key={it.label + idx}>
+                    <li className="sm-panel-itemWrap">
+                      {isRouterLink ? (
+                        <RouterLink
+                          className="sm-panel-item"
+                          to={it.link}
+                          target={it.target}
+                          rel={it.target === '_blank' ? 'noopener noreferrer' : undefined}
+                          aria-label={it.ariaLabel}
+                          data-index={idx + 1}
+                          style={isActive ? { color: 'var(--sm-accent, #5227ff)' } : undefined}
+                          onClick={() => {
+                            closeMenu();
+                            if (it.link === '/' && location.pathname === '/') {
                               setTimeout(() => {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                              }, 50);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }, 350);
+                            } else if (it.link.startsWith('/#') && location.pathname === '/') {
+                              const id = it.link.replace('/#', '');
+                              const element = document.getElementById(id);
+                              if (element) {
+                                setTimeout(() => {
+                                  element.scrollIntoView({ behavior: 'smooth' });
+                                }, 50);
+                              }
                             }
-                          }
-                        }}
-                      >
-                        <span className="sm-panel-itemLabel">{it.label}</span>
-                      </RouterLink>
-                    ) : (
-                      <Link
-                        className="sm-panel-item"
-                        to={it.link}
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                        target={it.target}
-                        aria-label={it.ariaLabel}
-                        data-index={idx + 1}
-                        style={isActive ? { color: '#5227ff' } : undefined}
-                        onClick={() => {
-                          closeMenu();
-                        }}
-                      >
-                        <span className="sm-panel-itemLabel">{it.label}</span>
-                      </Link>
+                          }}
+                        >
+                          <span className="sm-panel-itemLabel">{it.label}</span>
+                        </RouterLink>
+                      ) : (
+                        <Link
+                          className="sm-panel-item"
+                          to={it.link}
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          target={it.target}
+                          aria-label={it.ariaLabel}
+                          data-index={idx + 1}
+                          style={isActive ? { color: 'var(--sm-accent, #5227ff)' } : undefined}
+                          onClick={() => {
+                            closeMenu();
+                          }}
+                        >
+                          <span className="sm-panel-itemLabel">{it.label}</span>
+                        </Link>
+                      )}
+                    </li>
+                    {it.subItems && it.subItems.length > 0 && (
+                      <ul className="sm-panel-sub-list" style={{ listStyle: 'none', paddingLeft: '2rem', marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                        {it.subItems.map((sub, sIdx) => {
+                          const isSubActive = sub.link.includes('#')
+                            ? location.pathname === sub.link.split('#')[0] && location.hash === '#' + sub.link.split('#')[1]
+                            : location.pathname === sub.link;
+
+                          return (
+                            <li key={sub.label + sIdx} className="sm-panel-sub-item-wrap">
+                              <RouterLink
+                                to={sub.link}
+                                className="sm-panel-item"
+                                style={{
+                                  fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
+                                  padding: '0.4rem 0',
+                                  color: isSubActive ? 'var(--sm-accent, #5227ff)' : 'rgba(255,255,255,0.7)',
+                                  display: 'block',
+                                  overflow: 'hidden'
+                                }}
+                                onClick={closeMenu}
+                              >
+                                <span className="sm-panel-itemLabel" style={{ display: 'block' }}>{sub.label}</span>
+                              </RouterLink>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     )}
-                  </li>
+                  </React.Fragment>
                 );
               })
             ) : (
