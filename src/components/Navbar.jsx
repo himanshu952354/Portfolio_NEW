@@ -135,4 +135,3 @@ export default function Navbar({ setIsHoveringRing, setIsHoveringMenu, setMenuPo
     </motion.nav>
   );
 }
-}

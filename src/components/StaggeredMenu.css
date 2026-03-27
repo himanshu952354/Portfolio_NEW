@@ -1,4 +1,4 @@
-.staggered-menu-wrapper {
+﻿.staggered-menu-wrapper {
   position: relative;
   width: auto;
   height: auto;
@@ -369,24 +369,4 @@
   .staggered-menu-wrapper[data-open] .sm-logo-img {
     filter: invert(100%);
   }
-}
-
-@media (max-width: 640px) {
-  .staggered-menu-panel {
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
-
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
-  }
-}
-
-right: 0;
-}
-
-.staggered-menu-wrapper[data-open] .sm-logo-img {
-  filter: invert(100%);
-}
 }
