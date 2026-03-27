@@ -495,7 +495,7 @@ export const StaggeredMenu = ({
                       )}
                     </li>
                     {it.subItems && it.subItems.length > 0 && (
-                      <ul className="sm-panel-sub-list" style={{ listStyle: 'none', paddingLeft: '2rem', marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                      <ul className="sm-panel-sub-list" style={{ listStyle: 'none', paddingLeft: '2rem', marginTop: '-0.3rem', marginBottom: '0.2rem' }}>
                         {it.subItems.map((sub, sIdx) => {
                           const isSubActive = sub.link.includes('#')
                             ? location.pathname === sub.link.split('#')[0] && location.hash === '#' + sub.link.split('#')[1]
