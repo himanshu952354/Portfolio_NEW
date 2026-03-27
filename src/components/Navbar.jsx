@@ -6,17 +6,7 @@ import StaggeredMenu from './StaggeredMenu';
 const navLinks = [
   { title: 'Home', path: '/' },
   { title: 'Projects', path: '/#projects' },
-  { 
-    title: 'About Me', 
-    path: '/about',
-    subItems: [
-      { title: 'Tech & Tools', path: '/about#tech' },
-      { title: 'Training', path: '/about#training' },
-      { title: 'Certificates', path: '/about#certificates' },
-      { title: 'Achievements', path: '/about#cp' },
-      { title: 'Education', path: '/about#education' }
-    ]
-  },
+  { title: 'About Me', path: '/about' },
   { title: 'Resume', path: '/resume' }
 ];
 
@@ -24,8 +14,7 @@ const menuItems = navLinks.map(link => ({
   label: link.title,
   ariaLabel: `Go to ${link.title} page`,
   link: link.path,
-  target: link.target,
-  subItems: link.subItems
+  target: link.target
 }));
 
 
@@ -145,4 +134,5 @@ export default function Navbar({ setIsHoveringRing, setIsHoveringMenu, setMenuPo
       </div>
     </motion.nav>
   );
+}
 }

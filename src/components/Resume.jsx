@@ -15,9 +15,9 @@ const Resume = () => {
   const primaryColor = '#283593';
 
   return (
-    <div className="resume-page" style={{ 
-      padding: '120px 20px 60px', 
-      minHeight: '100vh', 
+    <div className="resume-page" style={{
+      padding: '120px 20px 60px',
+      minHeight: '100vh',
       backgroundColor: 'var(--bg-color)',
       display: 'flex',
       flexDirection: 'column',
@@ -144,10 +144,10 @@ const Resume = () => {
       `}</style>
 
       {/* Page Header (Heading & Button) */}
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'flex-end', 
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
         width: '100%',
         maxWidth: '900px',
         marginBottom: '1.5rem',
@@ -196,7 +196,7 @@ const Resume = () => {
         </motion.a>
       </div>
 
-      <div 
+      <div
         className="resume-paper"
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -245,7 +245,7 @@ const Resume = () => {
         <section>
           <h2 className="section-title">PROJECTS</h2>
           <div className="section-divider"></div>
-          
+
           <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
               <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a></p>
@@ -281,7 +281,7 @@ const Resume = () => {
               <li>Designed a desktop contact system supporting CRUD and instant search operations.</li>
               <li>Applied Trie-based indexing for rapid prefix filtering.</li>
               <li>Engineered a structured GUI with input validation and persistent storage handling.</li>
-              <li><span className="bold-blue">Tech & Tools used:</span> Java, Java-Swing, AWT, Trie Data Structure, OOPs, FileHandling</li>
+              <li><span className="bold-blue">Tech stack used:</span> Java, Java-Swing, AWT, Trie Data Structure, OOPs, FileHandling</li>
             </ul>
           </div>
         </section>
@@ -299,7 +299,7 @@ const Resume = () => {
             <ul style={{ listStyleType: 'disc' }}>
               <li>Applied core Data Structures and Algorithms concepts for placements.</li>
               <li>Solved 100+ problems on LeetCode and Codeforces to improve problem-solving skills.</li>
-              <li><span className="bold-blue">Tech & Tools used:</span> Java, Data Structures and Algorithms</li>
+              <li><span className="bold-blue">Tech stacks used:</span> Java, Data Structures and Algorithms</li>
             </ul>
           </div>
         </section>
@@ -359,7 +359,7 @@ const Resume = () => {
               <p>Bachelor of Technology - Computer Science and Engineering; <strong>CGPA: 7.37</strong></p>
               <p style={{ fontWeight: 500 }}>Since August 2023</p>
             </div>
-            
+
             <div style={{ marginTop: '0.2rem' }}>
               <div className="flex-between">
                 <p className="bold-blue">Ram Krishna College</p>
