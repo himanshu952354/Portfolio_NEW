@@ -4,6 +4,19 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
 const projectsData = [
   {
+    title: "PayFlow",
+    description: "An enterprise-grade, high-fidelity payroll processing workspace designed to connect HR command desks with secure employee self-service portals. Built with bank-grade ledger protocols.",
+    tech: ["MERN Stack", "Clerk Auth", "Tailwind CSS", "Chart.js"],
+    github: "https://github.com/himanshu952354/Employee_Payment_Management",
+    live: "https://employee-payment-management.onrender.com",
+    images: [
+      "/Portfolio/projects/payflow_v4.png",
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+    ]
+  },
+  {
     title: "Plan Pilot",
     description: "A modern Dashboard containing intuitive planning tools, visual metrics, and fully responsive layouts.",
     tech: ["MERN Stack", "React", "Node.js", "MongoDB"],
