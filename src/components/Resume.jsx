@@ -174,7 +174,7 @@ const Resume = () => {
           whileTap={{ scale: 0.95 }}
           data-aos="fade-up"
           data-aos-duration="800"
-          href="/Portfolio/Resume.pdf"
+          href="/Resume.pdf"
           download="Himanshu_Shekhar_Resume.pdf"
           className="print-button"
           style={{
