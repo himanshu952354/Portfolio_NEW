@@ -174,7 +174,7 @@ const Resume = () => {
           whileTap={{ scale: 0.95 }}
           data-aos="fade-up"
           data-aos-duration="800"
-          href="/Resume.pdf"
+          href="/Portfolio/Resume.pdf"
           download="Himanshu_Shekhar_Resume.pdf"
           className="print-button"
           style={{
@@ -224,7 +224,7 @@ const Resume = () => {
           <ul style={{ marginTop: '0.1rem', listStyleType: 'disc' }}>
             <li className="skill-item">
               <span className="skill-label">Languages:</span>
-              <span>Java, Python, JavaScript, C++, Typescript</span>
+              <span>Java, JavaScript</span>
             </li>
             <li className="skill-item">
               <span className="skill-label">Frontend:</span>
@@ -235,8 +235,8 @@ const Resume = () => {
               <span>Node.js, Express.js, Socket.io, REST APIs, JWT Authentication</span>
             </li>
             <li className="skill-item">
-              <span className="skill-label">Database&Tools:</span>
-              <span>MongoDB, MySQL, Git, Docker, AWS, CI/CD, Postman, Vercel, Render</span>
+              <span className="skill-label">Database & Tools:</span>
+              <span>MongoDB, MySQL, Git, Github, Postman, Vercel, Render</span>
             </li>
             <li className="skill-item">
               <span className="skill-label">Core CS Skills:</span>
@@ -256,7 +256,30 @@ const Resume = () => {
 
           <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">PlanPilot - Project Management & Real-time Collaboration | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> | <a href="#" target="_blank" rel="noreferrer" className="blue-link">Live</a></p>
+              <p className="bold-blue">
+                PayFlow – Employee Payment & HR Management System |{' '}
+                <a href="https://github.com/himanshu952354/Employee_Payment_Management" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> |{' '}
+                <a href="https://employee-payment-management.onrender.com/employees" target="_blank" rel="noreferrer" className="blue-link">Live</a>
+              </p>
+              <p style={{ fontWeight: 500 }}>May’ 2026</p>
+            </div>
+            <ul style={{ listStyleType: 'disc' }}>
+              <li>Built a multi-tenant HR & Payroll system with separate Admin and Employee dashboards.</li>
+              <li>Integrated Stripe and PayPal APIs for automated monthly salary payouts.</li>
+              <li>Designed a secure multi-tenant database with role-based access control.</li>
+              <li>Implemented real-time chat, attendance tracking, and employee management.</li>
+              <li>Developed a global autocomplete search for faster employee and payroll operations.</li>
+              <li><span className="bold-blue">Tech stack used:</span> PHP, Laravel, MySQL, Tailwind CSS, Stripe API, PayPal REST API, OAuth 2.0</li>
+            </ul>
+          </div>
+
+          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
+            <div className="flex-between">
+              <p className="bold-blue">
+                PlanPilot – Project Management & Real-time Collaboration |{' '}
+                <a href="https://github.com/himanshu952354/Plan-Pilot" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> |{' '}
+                <a href="https://plan-pilot-blush.vercel.app/" target="_blank" rel="noreferrer" className="blue-link">Live</a>
+              </p>
               <p style={{ fontWeight: 500 }}>Feb’ 2026</p>
             </div>
             <ul style={{ listStyleType: 'disc' }}>
@@ -271,30 +294,20 @@ const Resume = () => {
 
           <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">Echo - Sentiment Analysis of Incoming Helpdesk Calls | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> | <a href="#" target="_blank" rel="noreferrer" className="blue-link">Live</a></p>
+              <p className="bold-blue">
+                Echo – AI-Powered Sentiment Analysis for Helpdesk Calls |{' '}
+                <a href="https://github.com/himanshu952354/Echo" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> |{' '}
+                <a href="https://echo-gold.vercel.app/" target="_blank" rel="noreferrer" className="blue-link">Live</a>
+              </p>
               <p style={{ fontWeight: 500 }}>Dec’ 2025</p>
             </div>
             <ul style={{ listStyleType: 'disc' }}>
-              <li>Architected an AI-driven pipeline to evaluate emotional tone in live helpdesk calls.</li>
-              <li>Automated speech-to-text conversion paired with real-time sentiment tagging.</li>
-              <li>Crafted an interactive dashboard for continuous sentiment visualization.</li>
-              <li>Leveraged NLP and ML techniques to extract behavioral insights.</li>
-              <li>Streamlined escalation workflows via intelligent high-risk call alerts.</li>
-              <li><span className="bold-blue">Tech stack used:</span> React, JavaScript, Node.js, APIs, NLP, Speech-to-text, MongoDB</li>
-            </ul>
-          </div>
-
-          <div style={{ marginTop: '0.2rem', fontSize: '0.9rem' }}>
-            <div className="flex-between">
-              <p className="bold-blue">AgroTools - Farmers’ E-Commerce Platform | <a href="https://github.com/himanshu952354" target="_blank" rel="noreferrer" className="blue-link">GitHub</a> | <a href="#" target="_blank" rel="noreferrer" className="blue-link">Live</a></p>
-              <p style={{ fontWeight: 500 }}>Sept’ 2025</p>
-            </div>
-            <ul style={{ listStyleType: 'disc' }}>
-              <li>Developed a scalable full-stack marketplace tailored for agricultural commerce.</li>
-              <li>Implemented role-based authentication and structured product categorization.</li>
-              <li>Enhanced backend efficiency through optimized PHP–MySQL operations.</li>
-              <li>Delivered a responsive interface promoting seamless farmer accessibility.</li>
-              <li><span className="bold-blue">Tech stack used:</span> HTML, Tailwind CSS, PHP, MySQL, JavaScript</li>
+              <li>Built a full-stack MERN application to analyze customer sentiment from helpdesk call recordings.</li>
+              <li>Integrated Deepgram Nova-2 API for real-time speech-to-text transcription and sentiment analysis.</li>
+              <li>Developed an interactive analytics dashboard with charts for sentiment, call volume, and SLA tracking.</li>
+              <li>Implemented JWT authentication, secure audio uploads, and in-browser call recording.</li>
+              <li>Automated manager alerts and support notifications using email integration.</li>
+              <li><span className="bold-blue">Tech stack used:</span> React, Node.js, Express, MongoDB, Deepgram API, Tailwind CSS, Recharts, JWT, Multer, Nodemailer.</li>
             </ul>
           </div>
         </section>
@@ -305,7 +318,10 @@ const Resume = () => {
           <div className="section-divider"></div>
           <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between">
-              <p className="bold-blue">Lovely Professional University | <a href="#" className="blue-link">Certificate</a></p>
+              <p className="bold-blue">
+                Lovely Professional University |{' '}
+                <a href="https://drive.google.com/file/d/1HY9LW4fPVX3I7Y1fFASYLD8pMVVeJf8x/view?usp=sharing" target="_blank" rel="noreferrer" className="blue-link">Certificate</a>
+              </p>
               <p style={{ fontWeight: 500 }}>Jun’ 2025 – Jul' 2025</p>
             </div>
             <p style={{ fontWeight: 500 }}>Placement Ace: Java Bootcamp (Leetcode-Codeforces Edition)</p>
@@ -323,23 +339,23 @@ const Resume = () => {
           <div className="section-divider"></div>
           <div style={{ marginTop: '0.1rem', fontSize: '0.9rem' }}>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>ChatGPT- 4 Prompt Engineering | <a href="#" className="blue-link">Infosys</a></p>
+              <p>ChatGPT- 4 Prompt Engineering | Infosys | <a href="https://drive.google.com/file/d/1hR_xZfWZ9bMw4HHe_xh8szCo-towZUSC/view?usp=drive_link" target="_blank" rel="noreferrer" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>Aug’ 2025</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>Java Programming | <a href="#" className="blue-link">NeoColab</a></p>
+              <p>Java Programming | NeoColab | <a href="https://drive.google.com/file/d/189gpbome7y3ROYzALjHpmSNpxpfhojEr/view?usp=drive_link" target="_blank" rel="noreferrer" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>May’ 2025</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>Human Computer Interaction | <a href="https://drive.google.com/file/d/1N2iTGO2KtDmcqHEEn_dVyXgwxnX03KOy/view?usp=sharing" className="blue-link" target="_blank" rel="noreferrer">NPTEL</a></p>
+              <p>Human Computer Interaction | NPTEL | <a href="https://drive.google.com/file/d/1N2iTGO2KtDmcqHEEn_dVyXgwxnX03KOy/view?usp=sharing" target="_blank" rel="noreferrer" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>Apr’ 2025</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>Data Structures and Algorithm | <a href="#" className="blue-link">NeoColab</a></p>
+              <p>Data Structures and Algorithm | NeoColab | <a href="https://drive.google.com/file/d/1g3oaN_6JSwzXlHesYg7dDBUAt9u09_Jv/view?usp=drive_link" target="_blank" rel="noreferrer" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>Dec’ 2024</p>
             </div>
             <div className="flex-between" style={{ marginBottom: '0.02rem' }}>
-              <p>Responsive Web Design | <a href="#" className="blue-link">FreeCodeCamp</a></p>
+              <p>Responsive Web Design | FreeCodeCamp | <a href="https://drive.google.com/file/d/1OffZxmGMx6jDHqr7mEX1NA0RyeRxsKvI/view?usp=drive_link" target="_blank" rel="noreferrer" className="blue-link">Certificate</a></p>
               <p style={{ fontWeight: 500 }}>Nov’ 2023</p>
             </div>
           </div>
@@ -350,8 +366,11 @@ const Resume = () => {
           <h2 className="section-title">ACHIEVEMENTS</h2>
           <div className="section-divider"></div>
           <ul style={{ listStyleType: 'disc', marginTop: '0.1rem', fontSize: '0.9rem' }}>
-            <li>Solved 200+ algorithmic problems across LeetCode, CodeChef, and Codeforces.</li>
-            <li>Achieved ratings of 1600+ (LeetCode), 1300+ (CodeChef), and 1000+ (Codeforces). <a href="#" className="blue-link">Codolio</a></li>
+            <li>Solved 600+ algorithmic problems across LeetCode, CodeChef, and Codeforces.</li>
+            <li>
+              Achieved contest ratings of 1600+ (LeetCode), 1400+ (CodeChef), and 1000 (Codeforces).{' '}
+              <a href="https://codolio.com/profile/Dj952354" target="_blank" rel="noreferrer" className="blue-link">Codolio</a>
+            </li>
           </ul>
         </section>
 
@@ -365,7 +384,7 @@ const Resume = () => {
               <p style={{ fontWeight: 500 }}>Phagwara, Punjab</p>
             </div>
             <div className="flex-between">
-              <p>Bachelor of Technology - Computer Science and Engineering; <strong>CGPA: 7.37</strong></p>
+              <p>Bachelor of Technology - Computer Science and Engineering; <strong>CGPA: 7.68</strong></p>
               <p style={{ fontWeight: 500 }}>August 2023 - Present</p>
             </div>
 
