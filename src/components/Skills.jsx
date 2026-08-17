@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const skillsData = [
   { category: "Languages", items: ["Java", "C++", "C", "Python", "JavaScript"] },
   { category: "Frontend", items: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"] },
-  { category: "Backend", items: ["Node.js", "Express.js", "REST APIs"] },
+  { category: "Backend", items: ["Node.js", "Express.js", "Laravel", "Django", "REST APIs"] },
   { category: "Databases", items: ["MongoDB", "SQL"] },
   { category: "Tools", items: ["Git", "GitHub", "VS Code", "Postman"] },
 ];

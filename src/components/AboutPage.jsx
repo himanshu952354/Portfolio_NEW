@@ -11,7 +11,8 @@ import {
   SiTypescript, SiReact, SiNextdotjs, SiAstro, SiReactquery,
   SiSwr, SiStyledcomponents, SiGit, SiGreensock, SiFigma, SiFramer,
   SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiPython,
-  SiCplusplus, SiPostman, SiGithub, SiC, SiVercel, SiRender, SiCanva
+  SiCplusplus, SiPostman, SiGithub, SiC, SiVercel, SiRender, SiCanva,
+  SiLaravel, SiDjango
 } from 'react-icons/si';
 import { DiJava } from 'react-icons/di';
 
@@ -47,6 +48,8 @@ export default function AboutPage() {
     { name: 'React js', icon: <SiReact /> },
     { name: 'Node js', icon: <SiNodedotjs /> },
     { name: 'Express', icon: <SiExpress /> },
+    { name: 'Laravel', icon: <SiLaravel /> },
+    { name: 'Django', icon: <SiDjango /> },
     { name: 'MongoDB', icon: <SiMongodb /> },
     { name: 'SQL', icon: <SiMysql /> },
     { name: 'HTML / CSS', icon: <div style={{ display: 'flex', gap: '4px' }}><SiHtml5 /><SiCss /></div> },
